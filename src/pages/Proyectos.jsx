@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Proyectos = () => {
   const [darkMode, setDarkMode] = useState(false);
-
+  const location = useLocation();
   useEffect(() => {
     const body = document.body;
 
@@ -30,16 +31,30 @@ const Proyectos = () => {
     return () => observer.disconnect();
   }, []);
 
+  console.log(location);
   return (
     <section
       className={`text-gray-600 body-font mb-10 bg-cover overflow-hidden ${
         darkMode ? "light-bg-image" : "bg-image "
       }  `}
     >
-      <h1 className="text-4xl font-extrabold text-end p-10 container  ">
-        {" "}
-        PROYECTOS
-      </h1>
+      <div className="flex items-center">
+        {location.pathname === "/iampedroluis-github.io/proyectos" ? (
+          <Link to={"/iampedroluis-github.io/"}>
+            <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
+          </Link>
+        ) : (
+          <div></div>
+        )}
+        <h1
+          className="text-4xl font-extrabold text-end p-10 container  "
+          id="proyecto"
+        >
+          {" "}
+          PROYECTOS
+        </h1>
+      </div>
+
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-12">
           <div className="p-12 md:w-1/2 flex flex-col items-start">

@@ -1,12 +1,27 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Contacto = () => {
+  const location = useLocation();
   return (
     <>
       <section className="text-gray-600 body-font mb-10">
-        <h1 className="text-4xl font-extrabold mb-10 text-end p-10 container">
-          CONTACTO
-        </h1>
+        <div className="flex items-center">
+          {location.pathname === "/iampedroluis-github.io/contacto" ? (
+            <Link to={"/iampedroluis-github.io/"}>
+              <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
+            </Link>
+          ) : (
+            <div></div>
+          )}
+          <h1
+            className="text-4xl font-extrabold text-end p-10 container  "
+            id="proyecto"
+          >
+            {" "}
+            PROYECTOS
+          </h1>
+        </div>
         <div className="container px-5 mx-auto flex flex-wrap items-center">
           <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
             <h1 className="title-font font-medium text-5xl dark:text-dark text-blanco  ">
@@ -24,7 +39,7 @@ const Contacto = () => {
           <form
             action="https://formsubmit.co/pedroluisgutierrez96@gmail.com"
             method="POST"
-            className="lg:w-2/6 md:w-1/2 rounded-lg justify-center flex flex-col md:ml-auto mt-10 md:mt-0"
+            className="lg:w-2/6 md:w-1/2 rounded-lg justify-center flex flex-col md:ml-auto mt-10 md:mt-0 w-full"
           >
             <div className="relative mb-4">
               <label

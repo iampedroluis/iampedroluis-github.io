@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <div className="dark:bg-blanco bg-dark">
+      <div className="dark:bg-blanco bg-dark app-container">
         <BrowserRouter>
           <Navbar />
           <Routes>

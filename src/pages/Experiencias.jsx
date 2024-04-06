@@ -1,15 +1,29 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import emergencias from "../img/emergencias.png";
 import avalith from "../img/avalith.png";
 import telecom from "../img/telecom.png";
 const Experiencias = () => {
+  const location = useLocation();
   return (
     <>
       <section className="text-gray-600  body-font h-screen  text-gray-600 body-font pt-10 mb-10 bg-[#050505]  dark:bg-[#222222]">
-        <h1 className="text-4xl  mt-10 font-extrabold block text-end container bg-transparent text-blanco p-10 ">
-          {" "}
-          EXPERIENCIAS
-        </h1>
+        <div className="flex items-center">
+          {location.pathname === "/iampedroluis-github.io/experiencias" ? (
+            <Link to={"/iampedroluis-github.io/"}>
+              <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
+            </Link>
+          ) : (
+            <div></div>
+          )}
+          <h1
+            className="text-4xl font-extrabold text-end p-10 container  "
+            id="proyecto"
+          >
+            {" "}
+            EXPERIENCIAS
+          </h1>
+        </div>
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <p className="lg:w-2/3 mx-auto leading-relaxed text-lg font-thin  text-blanco  ">

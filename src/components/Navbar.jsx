@@ -39,11 +39,11 @@ const Navbar = () => {
 
   return (
     <header
-      className={`text-gray-600 dark:bg-[#FEFFFE] bg-black body-font sticky top-0 transition-all ${
+      className={`text-gray-600 w-full dark:bg-[#FEFFFE] bg-black body-font sticky top-0 transition-all ${
         visible ? "" : "-translate-y-full"
       }`}
     >
-      <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
+      <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center w-full">
         <Link to={"/iampedroluis-github.io/"}>
           <a className="title-font font-medium text-gray-900 mb-4 md:mb-0 miLogo">
             <p className="block text-white cursor-pointer dark:text-dark">

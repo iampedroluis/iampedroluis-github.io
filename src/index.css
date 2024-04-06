@@ -50,6 +50,11 @@ h1{
     border-radius:190px; }
   
 
+    .app-container {
+      margin: 0;
+      padding: 0;
+      width: 100%; /* Establece el ancho del contenedor al 100% */
+    }
 
     .btn-flotante {
       font-size: 16px; /* Cambiar el tamaño de la tipografia */
@@ -77,33 +82,12 @@ h1{
         font-size: 14px;
         padding: 12px 20px;
         bottom: 20px;
-        right: 20px;
+        right:  30px;
       }
     }
 
-    /* Scroll*/
 
-    ::-webkit-scrollbar {
-      width: 0.5rem; 
-      box-shadow: -1px 3px 159px 200px rgba(140,82,255,1);
--webkit-box-shadow: -1px 3px 159px 200px rgba(140,82,255,1);
--moz-box-shadow: -1px 3px 159px 200px rgba(140,82,255,1);/* Ancho del scrollbar */
-  }
-    
-  ::-webkit-scrollbar-track {
-      background-color: #4b16b548; 
-      box-shadow: -1px 3px 50px 11px rgba(140,82,255,1);
--webkit-box-shadow: -1px 3px 50px 11px rgba(140,82,255,1);
--moz-box-shadow: -1px 3px 50px 11px rgba(140,82,255,1);/* Color de fondo del track del scrollbar */
-  }
-    
-  ::-webkit-scrollbar-thumb {
-      background-color: #4b16b533; /* Color del thumb del scrollbar */
-      border-radius: 1rem; 
-      box-shadow: -1px 3px 159px 200px rgba(140,82,255,1);
--webkit-box-shadow: -1px 3px 159px 200px rgba(140,82,255,1);
--moz-box-shadow: -1px 3px 159px 200px rgba(140,82,255,1);/* Borde redondeado del thumb del scrollbar */
-  }
+
 
   .bg-image {
     background-image: url('../src/img/github.png');

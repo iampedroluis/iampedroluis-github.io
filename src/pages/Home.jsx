@@ -11,6 +11,7 @@ import AboutMe from "./AboutMe";
 import Proyectos from "./Proyectos";
 import Experiencias from "./Experiencias";
 import Conocimientos from "./Conocimientos";
+import Contacto from "./Contacto";
 const Home = () => {
   const images = [html, css, js, react, nodejs, python, tailwind, booststrap];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -62,6 +63,7 @@ const Home = () => {
       <Proyectos />
       <Experiencias />
       <Conocimientos />
+      <Contacto />
     </>
   );
 };
