@@ -30,9 +30,9 @@ const Home = () => {
 
   return (
     <>
-      <section className="text-gray-600 body-font mt-28  dark:bg-blanco ">
+      <section className="text-gray-600 body-font   dark:bg-blanco ">
         <p
-          className="text-5xl  text-blanco font-thin text-center dark:text-dark"
+          className="text-5xl mt-28 text-blanco font-thin text-center dark:text-dark"
           id="logo"
         >
           Hola!
