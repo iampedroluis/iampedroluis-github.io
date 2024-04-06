@@ -19,7 +19,7 @@ const Contacto = () => {
             id="proyecto"
           >
             {" "}
-            PROYECTOS
+            CONTACTO
           </h1>
         </div>
         <div className="container px-5 mx-auto flex flex-wrap items-center">
