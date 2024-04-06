@@ -31,12 +31,15 @@ const Home = () => {
   return (
     <>
       <section className="text-gray-600 body-font mt-10 pt-5 dark:bg-blanco ">
-        <p className="text-5xl  text-blanco font-thin text-center dark:text-dark">
+        <p
+          className="text-5xl  text-blanco font-thin text-center dark:text-dark"
+          id="logo"
+        >
           Hola!
         </p>
         <div className="container mx-auto flex py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow   flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="font-extrabold md:text-8xl text-6xl mb-4 text-gray-900 ">
+            <h1 className="font-extrabold md:text-8xl text-6xl mb-4 text-gray-900  ">
               <span className="block text-secondary ">FRONT-END</span>
               <span className="block text-blanco dark:text-dark">SOFTWARE</span>
               <span className="block text-blanco dark:text-dark">

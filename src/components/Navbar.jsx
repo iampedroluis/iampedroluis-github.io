@@ -44,17 +44,17 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center w-full">
-        <Link to={"/"}>
-          <a className="title-font font-medium text-gray-900 mb-4 md:mb-0 miLogo">
-            <p className="block text-white cursor-pointer dark:text-dark">
-              PEDRO
-            </p>
+        <a
+          href="logo"
+          className="title-font font-medium text-gray-900 mb-4 md:mb-0 miLogo"
+        >
+          <p className="block text-white cursor-pointer dark:text-dark">
+            PEDRO
+          </p>
 
-            <p className="block text-white cursor-pointer dark:text-dark">
-              LUIS
-            </p>
-          </a>
-        </Link>
+          <p className="block text-white cursor-pointer dark:text-dark">LUIS</p>
+        </a>
+
         <button
           onClick={toggleMenu}
           className="md:hidden focus:outline-none ml-auto "

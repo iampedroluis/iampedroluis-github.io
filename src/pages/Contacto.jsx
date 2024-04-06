@@ -9,7 +9,9 @@ const Contacto = () => {
         <div className="flex items-center">
           {location.pathname === "/contacto" ? (
             <Link to={"/"}>
-              <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
+              <a href="#logo">
+                <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
+              </a>
             </Link>
           ) : (
             <div></div>
