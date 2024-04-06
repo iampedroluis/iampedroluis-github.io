@@ -79,6 +79,7 @@ const Proyectos = () => {
               <a
                 href="https://github.com/iampedroluis/tony_p"
                 className="text-indigo-500 inline-flex items-center"
+                target="_blank"
               >
                 <i className="fa-brands  fa-github dark:hover:text-dark hover:text-blanco cursor-pointer transition duration-500 ease-in-out"></i>
               </a>
@@ -156,6 +157,7 @@ const Proyectos = () => {
               <a
                 href="https://github.com/iampedroluis/codemind_p"
                 className="text-indigo-500 inline-flex items-center"
+                target="_blank"
               >
                 <i className="fa-brands fa-github dark:hover:text-dark hover:text-blanco cursor-pointer transition duration-500 ease-in-out"></i>
               </a>
@@ -226,6 +228,7 @@ const Proyectos = () => {
             <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 dark:border-gray-300 mt-auto w-full">
               <a
                 href="https://github.com/iampedroluis/JWT-Auth"
+                target="_blank"
                 className="text-indigo-500 inline-flex items-center"
               >
                 <i className="fa-brands fa-github hover:text-blanco dark:hover:text-dark cursor-pointer transition duration-500 ease-in-out"></i>
