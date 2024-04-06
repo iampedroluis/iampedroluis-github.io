@@ -4,17 +4,17 @@ import { Link, useLocation } from "react-router-dom";
 const Conocimientos = () => {
   const location = useLocation();
   return (
-    <section className="text-gray-600 body-font h-screen text-gray-600 body-font mb-10 w-full">
+    <section className="text-gray-600 mt-28 body-font h-screen text-gray-600 body-font  w-full">
       <div className="flex items-center">
         {location.pathname === "/conocimientos" ? (
           <Link to={"/"}>
-            <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
+            <i className="fa-solid mt-5 fa-arrow-left-long text-start ms-10 w-1/3 "></i>
           </Link>
         ) : (
           <div></div>
         )}
         <h1
-          className="text-4xl font-extrabold text-end p-10 container  "
+          className="text-4xl font-extrabold text-end mt-5 mr-2 container  "
           id="proyecto"
         >
           {" "}

@@ -34,7 +34,7 @@ const Proyectos = () => {
   console.log(location);
   return (
     <section
-      className={`text-gray-600 body-font mb-10 bg-cover   overflow-hidden ${
+      className={`text-gray-600 body-font mb-10 bg-cover mt-28  overflow-hidden ${
         darkMode ? "light-bg-image greyscale" : "light-bg-image sm:h-full"
       }  `}
     >

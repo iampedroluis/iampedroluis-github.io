@@ -5,20 +5,20 @@ const Contacto = () => {
   const location = useLocation();
   return (
     <>
-      <section className="text-gray-600 body-font pt-10  pb-10 ">
+      <section className="text-gray-600 body-font mt  pb-10 ">
         <div className="flex items-center">
           {location.pathname === "/contacto" ? (
             <Link to={"/"}>
               <a href="#logo">
-                <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
+                <i className="fa-solid fa-arrow-left-long mt-28 text-start ms-10 w-1/3 "></i>
               </a>
             </Link>
           ) : (
             <div></div>
           )}
           <h1
-            className="text-4xl font-extrabold text-end p-10 container  "
-            id="proyecto"
+            className="text-4xl font-extrabold mt-28 text-end p-10 container  "
+            id="cntacto"
           >
             {" "}
             CONTACTO

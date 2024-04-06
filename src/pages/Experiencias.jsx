@@ -7,24 +7,24 @@ const Experiencias = () => {
   const location = useLocation();
   return (
     <>
-      <section className="text-gray-600  body-font h-screen  text-gray-600 body-font pt-10 mb-10 bg-[#050505]  dark:bg-[#222222]">
+      <section className="text-gray-600   body-font h-screen  text-gray-600 body-font  mb-10 bg-[#050505]  dark:bg-[#222222]">
         <div className="flex items-center">
           {location.pathname === "/experiencias" ? (
             <Link to={"/"}>
-              <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
+              <i className="fa-solid mt-28 fa-arrow-left-long  text-start ms-10 w-1/3 "></i>
             </Link>
           ) : (
             <div></div>
           )}
           <h1
-            className="text-4xl font-extrabold text-end p-10 container  "
+            className="text-4xl  mt-28 font-extrabold text-end p-10 container  "
             id="proyecto"
           >
             {" "}
             EXPERIENCIAS
           </h1>
         </div>
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-10 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <p className="lg:w-2/3 mx-auto leading-relaxed text-lg font-thin  text-blanco  ">
               A lo largo de mi trayectoria en el campo de la tecnología de la
@@ -33,7 +33,7 @@ const Experiencias = () => {
               de las organizaciones para las que he tenido el privilegio de
               trabajar incluyen...
             </p>
-            <div className="flex mt-24  mx-auto sm:flex-row  justify-center items-center">
+            <div className="flex mt-16  mx-auto sm:flex-row  justify-center items-center">
               <div className="relative flex-grow mx-5 ">
                 <img
                   src={emergencias}
