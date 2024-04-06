@@ -44,7 +44,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center w-full">
-        <Link to={"/iampedroluis-github.io/"}>
+        <Link to={"/"}>
           <a className="title-font font-medium text-gray-900 mb-4 md:mb-0 miLogo">
             <p className="block text-white cursor-pointer dark:text-dark">
               PEDRO
@@ -81,19 +81,19 @@ const Navbar = () => {
         >
           <Link
             className="mr-5 font-extralight sm:font-normal hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark"
-            to="/iampedroluis-github.io/proyectos"
+            to="/proyectos"
           >
             Proyectos
           </Link>
           <Link
             className="mr-5 font-extralight sm:font-normal hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark"
-            to="/iampedroluis-github.io/experiencias"
+            to="/experiencias"
           >
             Experiencias
           </Link>
           <Link
             className="mr-5 font-extralight sm:font-normal hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark"
-            to={"/iampedroluis-github.io/conocimientos"}
+            to={"/conocimientos"}
           >
             Conocimientos
           </Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
             <>
               <div className="md:hidden">
                 <Link
-                  to={"/iampedroluis-github.io/contacto"}
+                  to={"/contacto"}
                   className="mr-5 font-extralight hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark"
                 >
                   Contacto
@@ -130,7 +130,7 @@ const Navbar = () => {
             )}
           </button>
           <Link
-            to={"/iampedroluis-github.io/contacto"}
+            to={"/contacto"}
             className="inline-flex items-center bg-transparent border-2 py-1 px-3 focus:outline-none hover:bg-secondary hover:text-black text-white rounded-full text-base mt-4 md:mt-0 border-secondary transition duration-500  dark:text-dark ease-in-out"
           >
             Contacto

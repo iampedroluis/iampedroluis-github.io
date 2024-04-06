@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import cv from "./cv/Pedro-Luis-Gutierrez-Front-End-DEV.pdf";
 
 import Navbar from "./components/Navbar";
@@ -13,30 +13,18 @@ function App() {
   return (
     <>
       <div className="dark:bg-blanco bg-dark app-container">
-        <BrowserRouter>
+        <HashRouter>
           <Navbar />
           <Routes>
-            <Route path="/iampedroluis-github.io/" element={<Home />} />
-            <Route path="/iampedroluis-github.io/yo" element={<AboutMe />} />
-            <Route
-              path="/iampedroluis-github.io/proyectos"
-              element={<Proyectos />}
-            />
-            <Route
-              path="/iampedroluis-github.io/experiencias"
-              element={<Experiencias />}
-            />
-            <Route
-              path="/iampedroluis-github.io/conocimientos"
-              element={<Conocimientos />}
-            />
-            <Route
-              path="/iampedroluis-github.io/contacto"
-              element={<Contacto />}
-            />
+            <Route path="/" element={<Home />} />
+            <Route path="/yo" element={<AboutMe />} />
+            <Route path="/proyectos" element={<Proyectos />} />
+            <Route path="/experiencias" element={<Experiencias />} />
+            <Route path="/conocimientos" element={<Conocimientos />} />
+            <Route path="/contacto" element={<Contacto />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
+        </HashRouter>
 
         <a href={cv} target="_blank" className="btn-flotante">
           <i className="fa-regular fa-file-pdf"> CV</i>
