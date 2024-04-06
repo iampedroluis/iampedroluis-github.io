@@ -31,50 +31,77 @@ const Conocimientos = () => {
           <div className="flex flex-wrap justify-center items-center mt-24">
             <div className="relative flex-grow  my-2 sm:w-auto sm:mx-0">
               <Link to="/proyectos#react">
-                <i className="fa-brands sm:text-2xl text-4xl fa-react hover:text-[#61DBFB] hover:drop-shadow-2xl  hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark hover:shadow-lg rounded-full hover:shadow-[#61DBFB] shadow-2xl"></i>
+                <i
+                  className="fa-brands sm:text-2xl text-4xl fa-react hover:text-[#61DBFB] hover:drop-shadow-2xl hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"
+                  style={{ textShadow: "  2px 1px 7px rgba(218,211,211,0.29" }}
+                ></i>
               </Link>
             </div>
             <div className="relative flex-grow  my-2 sm:w-auto sm:mx-0">
               <Link to="/proyectos#js">
-                <i className="fa-brands sm:text-2xl text-4xl fa-js hover:text-[#EED81C] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark hover:shadow-lg hover:shadow-[#EED81C] rounded-full shadow-2xl "></i>
+                <i
+                  className="fa-brands sm:text-2xl text-4xl fa-js hover:text-[#EED81C] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark  "
+                  style={{ textShadow: "  2px 1px 7px rgba(218,211,211,0.29" }}
+                ></i>
               </Link>
             </div>
 
             <div className="relative flex-grow  ">
               <Link to="/proyectos#python">
-                <i className="fa-brands sm:text-2xl  text-4xl fa-python hover:text-[#3F7FB0] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark  hover:shadow-lg rounded-full hover:shadow-[#3F7FB0] shadow-2xl"></i>
+                <i
+                  className="fa-brands sm:text-2xl  text-4xl fa-python hover:text-[#3F7FB0] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark "
+                  style={{ textShadow: "  2px 1px 7px rgba(218,211,211,0.29" }}
+                ></i>
               </Link>
             </div>
             <div className="relative flex-grow  ">
               <Link to="/proyectos#html">
-                <i className="fa-brands sm:text-2xl  text-4xl fa-html5 hover:text-[#F16529] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark hover:shadow-lg rounded-full hover:shadow-[#F16529] shadow-2xl"></i>
+                <i
+                  className="fa-brands sm:text-2xl  text-4xl fa-html5 hover:text-[#F16529] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"
+                  style={{ textShadow: "  2px 1px 7px rgba(218,211,211,0.29" }}
+                ></i>
               </Link>
             </div>
 
             <div className="relative flex-grow  ">
               <Link to="/proyectos#css">
-                <i className="fa-brands sm:text-2xl  text-4xl fa-css3-alt hover:text-[#228CC8] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark hover:shadow-lg rounded-full hover:shadow-[#228CC8] shadow-2xl"></i>
+                <i
+                  className="fa-brands sm:text-2xl  text-4xl fa-css3-alt hover:text-[#228CC8] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"
+                  style={{ textShadow: "  2px 1px 7px rgba(218,211,211,0.29" }}
+                ></i>
               </Link>
             </div>
             <div className="relative flex-grow  ">
               <Link to="/proyectos#bootstrap">
-                <i className="fa-brands sm:text-2xl  text-4xl fa-bootstrap hover:text-[#7C11F7] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark hover:shadow-lg rounded-full hover:shadow-[#7C11F7] shadow-2xl"></i>
+                <i
+                  className="fa-brands sm:text-2xl  text-4xl fa-bootstrap hover:text-[#7C11F7] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"
+                  style={{ textShadow: "  2px 1px 7px rgba(218,211,211,0.29" }}
+                ></i>
               </Link>
             </div>
             <div className="relative flex-grow  ">
               <Link to="/proyectos#figma">
-                <i className="fa-brands sm:text-2xl  text-4xl fa-figma hover:text-[#F76F5E] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark hover:shadow-lg rounded-full hover:shadow-[#F76F5E] shadow-2xl"></i>
+                <i
+                  className="fa-brands sm:text-2xl  text-4xl fa-figma hover:text-[#F76F5E] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"
+                  style={{ textShadow: "  2px 1px 7px rgba(218,211,211,0.29" }}
+                ></i>
               </Link>
             </div>
             <div className="relative flex-grow">
               <Link to="/proyectos#docker">
-                <i className="fa-brands sm:text-2xl text-4xl fa-docker hover:text-[#2A99EE] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark hover:shadow-lg rounded-full hover:shadow-[#2A99EE] shadow-2xl"></i>
+                <i
+                  className="fa-brands sm:text-2xl text-4xl fa-docker hover:text-[#2A99EE] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"
+                  style={{ textShadow: "  2px 1px 7px rgba(218,211,211,0.29" }}
+                ></i>
               </Link>
             </div>
 
             <div className="relative flex-grow">
               <Link to="/proyectos#node" className="   ">
-                <i className="fa-brands sm:text-2xl text-4xl fa-node-js hover:text-[#8BC401] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark hover:shadow-lg rounded-full hover:shadow-[#8BC401] shadow-2xl"></i>
+                <i
+                  className="fa-brands sm:text-2xl text-4xl fa-node-js hover:text-[#8BC401] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"
+                  style={{ textShadow: "  2px 1px 7px rgba(218,211,211,0.29" }}
+                ></i>
               </Link>
             </div>
           </div>
