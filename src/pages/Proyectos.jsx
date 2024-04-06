@@ -39,7 +39,7 @@ const Proyectos = () => {
       }  `}
     >
       <div className="flex items-center">
-        {location.pathname === "/iampedroluis-github.io/proyectos" ? (
+        {location.pathname === "/#/proyectos" ? (
           <Link to={"/iampedroluis-github.io/"}>
             <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
           </Link>

@@ -7,7 +7,7 @@ const Contacto = () => {
     <>
       <section className="text-gray-600 body-font mb-10">
         <div className="flex items-center">
-          {location.pathname === "/iampedroluis-github.io/contacto" ? (
+          {location.pathname === "/#/contacto" ? (
             <Link to={"/iampedroluis-github.io/"}>
               <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
             </Link>
