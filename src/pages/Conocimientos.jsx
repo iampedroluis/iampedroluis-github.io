@@ -7,7 +7,7 @@ const Conocimientos = () => {
     <section className="text-gray-600 body-font h-screen text-gray-600 body-font mb-10 w-full">
       <div className="flex items-center">
         {location.pathname === "/conocimientos" ? (
-          <Link to={"/iampedroluis-github.io/"}>
+          <Link to={"/"}>
             <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
           </Link>
         ) : (
