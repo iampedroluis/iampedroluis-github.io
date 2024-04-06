@@ -88,7 +88,6 @@ h1{
 
 
 
-
   .bg-image {
     background-image: url('../src/img/github.png');
     background-repeat: no-repeat;
@@ -103,6 +102,12 @@ h1{
     background-attachment: fixed;
     background-position: left;
     background-size: 50%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .light-bg-image {
+      background-size: 100% auto; /* Ajustar el tamaño del fondo al ancho completo */
+    }
   }
 
   .img-exp{
