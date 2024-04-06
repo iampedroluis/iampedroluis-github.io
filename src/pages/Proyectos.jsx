@@ -76,7 +76,10 @@ const Proyectos = () => {
               de la información.
             </p>
             <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 p-4 my-5 dark:border-gray-300 mt-auto w-full">
-              <a href="#" className="text-indigo-500 inline-flex items-center">
+              <a
+                href="https://github.com/iampedroluis/tony_p"
+                className="text-indigo-500 inline-flex items-center"
+              >
                 <i className="fa-brands  fa-github dark:hover:text-dark hover:text-blanco cursor-pointer transition duration-500 ease-in-out"></i>
               </a>
               <a
@@ -150,7 +153,10 @@ const Proyectos = () => {
               la API de SweetAlert2 para alertas dentro de la aplicación.
             </p>
             <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-300 mt-auto w-full">
-              <a href="#" className="text-indigo-500 inline-flex items-center">
+              <a
+                href="https://github.com/iampedroluis/codemind_p"
+                className="text-indigo-500 inline-flex items-center"
+              >
                 <i className="fa-brands fa-github dark:hover:text-dark hover:text-blanco cursor-pointer transition duration-500 ease-in-out"></i>
               </a>
               <a
@@ -218,7 +224,10 @@ const Proyectos = () => {
               estructura con componentes en ReactJS siguiendo el patrón Flux.
             </p>
             <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 dark:border-gray-300 mt-auto w-full">
-              <a href="#" className="text-indigo-500 inline-flex items-center">
+              <a
+                href="https://github.com/iampedroluis/JWT-Auth"
+                className="text-indigo-500 inline-flex items-center"
+              >
                 <i className="fa-brands fa-github hover:text-blanco dark:hover:text-dark cursor-pointer transition duration-500 ease-in-out"></i>
               </a>
               <a
