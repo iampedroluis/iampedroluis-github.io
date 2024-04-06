@@ -5,7 +5,7 @@ const Contacto = () => {
   const location = useLocation();
   return (
     <>
-      <section className="text-gray-600 body-font pt-10  ">
+      <section className="text-gray-600 body-font pt-10  pb-10 ">
         <div className="flex items-center">
           {location.pathname === "/contacto" ? (
             <Link to={"/"}>

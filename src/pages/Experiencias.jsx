@@ -37,19 +37,19 @@ const Experiencias = () => {
               <div className="relative flex-grow mx-5 ">
                 <img
                   src={emergencias}
-                  className="leading-7 img-exp text-sm text-gray-600 grayscale hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out"
+                  className="leading-7 img-exp text-sm text-gray-600 grayscale hover:grayscale-0 cursor-pointer ease-in-out"
                 />
               </div>
               <div className="relative flex-grow  mx-5 ">
                 <img
                   src={avalith}
-                  className="leading-7 img-exp text-sm text-gray-600 grayscale hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out "
+                  className="leading-7 img-exp text-sm text-gray-600 grayscale hover:grayscale-0 cursor-pointer  ease-in-out "
                 />
               </div>
               <div className="relative flex-grow mx-5  ">
                 <img
                   src={telecom}
-                  className="leading-7 img-exp  text-sm text-gray-600 grayscale hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out"
+                  className="leading-7 img-exp  text-sm text-gray-600  grayimg cursor-pointer text-white transition duration-500 ease-in-out"
                 />
               </div>
             </div>

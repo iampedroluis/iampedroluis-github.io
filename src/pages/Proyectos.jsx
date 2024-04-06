@@ -35,7 +35,7 @@ const Proyectos = () => {
   return (
     <section
       className={`text-gray-600 body-font mb-10 bg-cover overflow-hidden ${
-        darkMode ? "light-bg-image" : "bg-image "
+        darkMode ? "light-bg-image greyscale" : "light-bg-image  "
       }  `}
     >
       <div className="flex items-center">

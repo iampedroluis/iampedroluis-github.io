@@ -9,7 +9,7 @@ const AboutMe = () => {
           <p className="w-full lg:w-auto text-center lg:text-left mb-20  font-extralight">
             Mi nombre es <span className="text-secondary">Pedro Luis</span> y
             soy desarrollador de software{" "}
-            <span className="text-secondary">Front-End</span>
+            <span className="text-secondary">Front-End </span>
             con competencias sólidas en{" "}
             <span className="text-secondary">Back-End</span>, incluyendo Node.JS
             y Flask. Además, tengo habilidades en{" "}

@@ -121,3 +121,9 @@ textarea:focus {
     border-color: #74ce71;
     box-shadow: 0 0 10px #8ace71;
 }
+.grayimg{
+  filter: grayscale(95%);
+}
+.grayimg:hover{
+  filter: brightness(1.75);
+}
