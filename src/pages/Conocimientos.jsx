@@ -80,7 +80,7 @@ const Conocimientos = () => {
           <div className="container mt-20">
             <Link
               to={"/contacto"}
-              className="inline-flex items-center  justify-center bg-transparent border-2 py-1 px-3 focus:outline-none hover:bg-secondary hover:text-black text-white rounded-full text-base mt-4 md:mt-0 border-secondary transition duration-500  dark:text-dark ease-in-out"
+              className="inline-flex items-center  justify-center bg-transparent border-2 py-1 px-3 focus:outline-none hover:bg-secondary hover:text-black text-white rounded-full text-base mt-4 md:mt-0 border-secondary transition duration-500  dark:text-dark ease-in-out "
             >
               Contacto
             </Link>
