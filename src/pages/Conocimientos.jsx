@@ -19,55 +19,55 @@ const Conocimientos = () => {
           </p>
           <div className="flex mt-24  mx-auto sm:flex-row  justify-center items-center">
             <div className="relative flex-grow mx-5 ">
-              <Link to="/proyectos#react">
+              <Link to="/iampedroluis-github.io/proyectos#react">
                 <i className="fa-brands sm:text-2xl  text-4xl fa-react hover:text-[#61DBFB] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"></i>
               </Link>
             </div>
             <div className="relative flex-grow mx-5 ">
-              <Link to="/proyectos#js">
+              <Link to="/iampedroluis-github.io/proyectos#js">
                 <i className="fa-brands sm:text-2xl  text-4xl fa-js hover:text-[#EED81C] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"></i>
               </Link>
             </div>
             <div className="relative flex-grow mx-5 ">
-              <Link to="/proyectos#python">
+              <Link to="/iampedroluis-github.io/proyectos#python">
                 <i className="fa-brands sm:text-2xl  text-4xl fa-python hover:text-[#3F7FB0] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark "></i>
               </Link>
             </div>
             <div className="relative flex-grow mx-5 ">
-              <Link to="/proyectos#html">
+              <Link to="/iampedroluis-github.io/proyectos#html">
                 <i className="fa-brands sm:text-2xl  text-4xl fa-html5 hover:text-[#F16529] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark "></i>
               </Link>
             </div>
 
             <div className="relative flex-grow mx-5 ">
-              <Link to="/proyectos#css">
+              <Link to="/iampedroluis-github.io/proyectos#css">
                 <i className="fa-brands sm:text-2xl  text-4xl fa-css3-alt hover:text-[#228CC8] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"></i>
               </Link>
             </div>
             <div className="relative flex-grow mx-5 ">
-              <Link to="/proyectos#bootstrap">
+              <Link to="/iampedroluis-github.io/proyectos#bootstrap">
                 <i className="fa-brands sm:text-2xl  text-4xl fa-bootstrap hover:text-[#7C11F7] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark "></i>
               </Link>
             </div>
             <div className="relative flex-grow mx-5 ">
-              <Link to="/proyectos#figma">
+              <Link to="/iampedroluis-github.io/proyectos#figma">
                 <i className="fa-brands sm:text-2xl  text-4xl fa-figma hover:text-[#F76F5E] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"></i>
               </Link>
             </div>
             <div className="relative flex-grow mx-5 ">
-              <Link to="/proyectos#docker">
+              <Link to="/iampedroluis-github.io/proyectos#docker">
                 <i className="fa-brands sm:text-2xl  text-4xl fa-docker hover:text-[#2A99EE] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"></i>
               </Link>
             </div>
             <div className="relative flex-grow mx-5 ">
-              <Link to="/proyectos#node">
+              <Link to="/iampedroluis-github.io/proyectos#node">
                 <i className="fa-brands sm:text-2xl  text-4xl fa-node-js hover:text-[#8BC401] hover:grayscale-0 cursor-pointer text-white transition duration-200 ease-in-out text-blanco dark:text-dark"></i>
               </Link>
             </div>
           </div>
           <div className="container mt-20">
             <Link
-              to={"/contacto"}
+              to={"/iampedroluis-github.io/contacto"}
               className="inline-flex items-center  justify-center bg-transparent border-2 py-1 px-3 focus:outline-none hover:bg-secondary hover:text-black text-white rounded-full text-base mt-4 md:mt-0 border-secondary transition duration-500  dark:text-dark ease-in-out"
             >
               Contacto
