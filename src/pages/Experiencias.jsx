@@ -49,7 +49,7 @@ const Experiencias = () => {
               <div className="relative flex-grow mx-5  ">
                 <img
                   src={telecom}
-                  className="leading-7 img-exp  text-sm text-gray-600  grayimg cursor-pointer text-white transition duration-500 ease-in-out"
+                  className="leading-7 img-exp  text-sm text-gray-600  grayimg whiteimg cursor-pointer text-white transition duration-500 ease-in-out"
                 />
               </div>
             </div>

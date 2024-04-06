@@ -132,3 +132,7 @@ textarea:focus {
 .grayimg:hover{
   filter: brightness(1.75);
 }
+.whiteimg{
+  filter: invert(0.4) ;
+
+}
