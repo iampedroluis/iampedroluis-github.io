@@ -24,11 +24,9 @@ const Conocimientos = () => {
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
           <p className="lg:w-2/3 mx-auto leading-relaxed text-xl font-extralight text-blanco dark:text-dark">
-            A lo largo de mi trayectoria en el campo de la tecnología de la
-            información, he colaborado con diversas empresas, tanto de manera
-            presencial como remota, así como también como freelance. Algunas de
-            las organizaciones para las que he tenido el privilegio de trabajar
-            incluyen...
+            Como desarrollador Front-End, cuento con experiencia en una variedad
+            de lenguajes de diseño, maquetación. Además, poseo conocimientos
+            sólidos en desarrollo Back-End y calidad de software (QA).
           </p>
           <div className="flex flex-wrap justify-center items-center mt-24">
             <div className="relative flex-grow  my-2 sm:w-auto sm:mx-0">
