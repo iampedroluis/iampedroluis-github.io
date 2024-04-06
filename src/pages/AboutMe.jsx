@@ -20,11 +20,11 @@ const AboutMe = () => {
           </p>
         </div>
         <div className="lg:max-w-lg w-full flex justify-center    ">
-          <div className="max-w-80 max-h-80 w-80 h-80 sm:w-full sm:h-auto sm:perfil img-gradient rounded-full bg-indigo-500 shadow-lg shadow-indigo-500/50 drop-shadow-2xl flex justify-center items-center hover:bg-transparent focus:outline-none  transition duration-900 ease-in-out shadowimg">
+          <div className="max-w-80 max-h-80 w-80 h-80 sm:w-full sm:h-auto sm:perfil img-gradient rounded-full  drop-shadow-2xl flex justify-center items-center  focus:outline-none  transition duration-900 ease-in-out shadowimg">
             <img
               src={perfil}
               alt="Perfil"
-              className="w-64 h-64 sm:w-full sm:h-auto rounded-full hover:bg-transparent focus:outline-none  transition duration-900  "
+              className="w-64 h-64 sm:w-full sm:h-auto rounded-full bg-transparent   transition duration-900  "
             />
           </div>
         </div>
