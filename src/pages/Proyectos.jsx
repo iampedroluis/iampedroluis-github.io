@@ -34,20 +34,20 @@ const Proyectos = () => {
   console.log(location);
   return (
     <section
-      className={`text-gray-600 body-font mb-10 bg-cover mt-28  overflow-hidden ${
+      className={`text-gray-600 body-font mb-10 bg-cover   overflow-hidden ${
         darkMode ? "light-bg-image greyscale" : "light-bg-image sm:h-full"
       }  `}
     >
       <div className="flex items-center">
         {location.pathname === "/proyectos" ? (
           <Link to={"/"}>
-            <i className="fa-solid fa-arrow-left-long text-start ms-10 w-1/3 "></i>
+            <i className="fa-solid mt-28 fa-arrow-left-long text-start ms-10 w-1/3 "></i>
           </Link>
         ) : (
           <div></div>
         )}
         <h1
-          className="text-4xl font-extrabold text-end p-10 container  "
+          className="text-4xl font-extrabold text-end mt-28 p-10 container  "
           id="proyecto"
         >
           {" "}
