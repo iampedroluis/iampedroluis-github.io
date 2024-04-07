@@ -4,31 +4,31 @@ import { Link, useLocation } from "react-router-dom";
 const Conocimientos = () => {
   const location = useLocation();
   return (
-    <section className="text-gray-600 mt-28 body-font h-screen text-gray-600 body-font  w-full">
+    <section className="text-gray-600 body-font h-screen text-gray-600 body-font  w-full">
       <div className="flex items-center">
         {location.pathname === "/conocimientos" ? (
           <Link to={"/"}>
-            <i className="fa-solid mt-5 fa-arrow-left-long text-start ms-10 w-1/3 "></i>
+            <i className="fa-solid mt-40 fa-arrow-left-long text-start ms-10 w-1/3 "></i>
           </Link>
         ) : (
           <div></div>
         )}
         <h1
-          className="text-4xl font-extrabold text-end mt-5 mr-2 container  "
+          className="text-4xl font-extrabold text-end mt-40 mr-2 container  "
           id="proyecto"
         >
           {" "}
           CONOCIMIENTOS
         </h1>
       </div>
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-20 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
           <p className="lg:w-2/3 mx-auto leading-relaxed text-xl font-extralight text-blanco dark:text-dark">
             Como desarrollador Front-End, cuento con experiencia en una variedad
             de lenguajes de diseño, maquetación. Además, poseo conocimientos
             sólidos en desarrollo Back-End y calidad de software (QA).
           </p>
-          <div className="flex flex-wrap justify-center items-center mt-24">
+          <div className="flex flex-wrap justify-center items-center mt-10">
             <div className="relative flex-grow  my-2 sm:w-auto sm:mx-0">
               <Link to="/proyectos#react">
                 <i
