@@ -21,7 +21,7 @@ const Conocimientos = () => {
           CONOCIMIENTOS
         </h1>
       </div>
-      <div className="container px-5 py-20 mx-auto">
+      <div className="container px-5  mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
           <p className="lg:w-2/3 mx-auto leading-relaxed text-xl font-extralight text-blanco dark:text-dark">
             Como desarrollador Front-End, cuento con experiencia en una variedad
