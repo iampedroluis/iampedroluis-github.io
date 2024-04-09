@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`text-gray-600 w-full dark:bg-[#FEFFFE] bg-black body-font  fixed top-0 max-w-100 transition-all ${
+      className={`z-[100] text-gray-600 w-full dark:bg-[#FEFFFE] bg-black body-font  fixed top-0 max-w-100 transition-all ${
         visible ? "" : "-translate-y-full"
       }`}
     >

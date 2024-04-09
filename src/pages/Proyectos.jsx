@@ -62,12 +62,12 @@ const Proyectos = () => {
               FRONT-END
             </span>
             <h2
-              className="sm:text-3xl text-2xl text-[#EEF2FF] dark:text-gray-900 title-font font-medium  mt-4 mb-4"
+              className="sm:text-3xl text-2xl text-[#EEF2FF] dark:text-gray-600 title-font font-medium  mt-4 mb-4"
               id="necc"
             >
               NexConnect
             </h2>
-            <p className="leading-relaxed mb-8">
+            <p className="leading-relaxed mb-8 text-gray-500 ">
               Plataforma web dinámica para la creación y visualización de posts,
               y descarga de archivos según roles definidos. Diseñada con
               ReactJS, Tailwind CSS, en el backend, utiliza Node.js y gestiona
@@ -145,7 +145,7 @@ const Proyectos = () => {
             <h2 className="sm:text-3xl text-2xl text-[#EEF2FF] dark:text-gray-900 title-font font-medium  mt-4 mb-4">
               CodeMind
             </h2>
-            <p className="leading-relaxed mb-8">
+            <p className="leading-relaxed mb-8 text-gray-500">
               Plataforma web de ejercicios de lenguajes y herramientas de
               programación. Creada con arquitectura Flux, componentes en
               ReactJs, y empleando SqlAlchemy, Flask API y Bootstrap para la
@@ -219,7 +219,7 @@ const Proyectos = () => {
             <h2 className="sm:text-3xl text-2xl text-[#EEF2FF] dark:text-gray-900 title-font font-medium  mt-4 mb-4">
               JWT-Auth
             </h2>
-            <p className="leading-relaxed mb-8">
+            <p className="leading-relaxed mb-8 text-gray-500">
               Aplicación web de demostración que garantiza la autenticación
               segura mediante el estándar JWT. Emplea SQLAlchemy para
               administrar bases de datos, Flask como framework para APIs y se

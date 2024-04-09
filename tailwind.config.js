@@ -13,6 +13,7 @@ export default {
         secondary: "#8C52FF",
         blanco: "#F4F4F5",
         dark: "#0F0F0F",
+        gris: "##999999",
       },
     },
   },
