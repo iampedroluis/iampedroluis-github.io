@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Contacto = () => {
-  const [send, SetSend] = useState(false);
-  const handleSend = () => {
-    SetSend(true);
-  };
   const location = useLocation();
   return (
     <>
@@ -28,119 +24,94 @@ const Contacto = () => {
             CONTACTO
           </h1>
         </div>
-        {!send ? (
-          <div className="container px-5 mx-auto flex flex-wrap items-center">
-            <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-              <h1 className="title-font font-medium text-5xl dark:text-dark text-blanco  ">
-                Plasmar las ideas en tangibles.
-              </h1>
-              <p className="leading-relaxed mt-4 dark:text-dark text-blanco">
-                Estoy aquí para ayudarte en ese proceso y hacer realidad tus
-                visiones.
-              </p>
-              <p className="leading-relaxed mt-2 dark:text-dark text-blanco">
-                Si estás listo para comenzar a dar vida a tus ideas, no dudes en
-                contactarme a través de mi correo electrónico.
-              </p>
+
+        <div className="container px-5 mx-auto flex flex-wrap items-center">
+          <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+            <h1 className="title-font font-medium text-5xl dark:text-dark text-blanco  ">
+              Plasmar las ideas en tangibles.
+            </h1>
+            <p className="leading-relaxed mt-4 dark:text-dark text-blanco">
+              Estoy aquí para ayudarte en ese proceso y hacer realidad tus
+              visiones.
+            </p>
+            <p className="leading-relaxed mt-2 dark:text-dark text-blanco">
+              Si estás listo para comenzar a dar vida a tus ideas, no dudes en
+              contactarme a través de mi correo electrónico.
+            </p>
+          </div>
+          <form
+            action="https://formsubmit.co/pedroluisgutierrez96@gmail.com"
+            method="POST"
+            className="lg:w-2/6 md:w-1/2 rounded-lg justify-center flex flex-col md:ml-auto mt-10 md:mt-0 w-full"
+          >
+            <div className="relative mb-4">
+              <label
+                htmlFor="full-name"
+                className="leading-7 text-sm dark:text-dark text-blanco"
+              >
+                <span className="text-rose-700">* </span> Nombre y Apellidos
+                Completos:
+              </label>
+              <input
+                required
+                type="text"
+                id="full-name"
+                name="name"
+                className="w-full bg-transparent focus:bg-blanco rounded border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                pattern=".{2,}"
+              />
             </div>
-            <form
-              action="https://formsubmit.co/pedroluisgutierrez96@gmail.com"
-              method="POST"
-              className="lg:w-2/6 md:w-1/2 rounded-lg justify-center flex flex-col md:ml-auto mt-10 md:mt-0 w-full"
-            >
-              <div className="relative mb-4">
-                <label
-                  htmlFor="full-name"
-                  className="leading-7 text-sm dark:text-dark text-blanco"
-                >
-                  <span className="text-rose-700">* </span> Nombre y Apellidos
-                  Completos:
-                </label>
-                <input
-                  required
-                  type="text"
-                  id="full-name"
-                  name="name"
-                  className="w-full bg-transparent focus:bg-blanco rounded border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  pattern=".{2,}"
-                />
-              </div>
-              <div className="relative mb-4">
-                <label
-                  htmlFor="email"
-                  className="leading-7 text-sm dark:text-dark text-blanco"
-                >
-                  <span className="text-rose-700">* </span>Correo electronico:
-                </label>
-                <input
-                  required
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full bg-transparent focus:bg-blanco  rounded border input input-ghost w-full  border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+            <div className="relative mb-4">
+              <label
+                htmlFor="email"
+                className="leading-7 text-sm dark:text-dark text-blanco"
+              >
+                <span className="text-rose-700">* </span>Correo electronico:
+              </label>
+              <input
+                required
+                type="email"
+                id="email"
+                name="email"
+                className="w-full bg-transparent focus:bg-blanco  rounded border input input-ghost w-full  border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
                 invalid:border-rose-500 invalid:text-rose-600
                 focus:invalid:border-rose-500 focus:invalid:ring-rose-500duration-200 ease-in-out"
-                  pattern=".{2,}"
-                />
-              </div>
-              <div className="relative mb-4">
-                <label
-                  htmlFor="message"
-                  className="leading-7 text-sm dark:text-dark text-blanco"
-                >
-                  <span className="text-rose-700">* </span>Mensaje:
-                </label>
-                <textarea
-                  required
-                  id="message"
-                  name="message"
-                  className="textarea  w-full bg-transparent focus:bg-blanco  rounded border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary text-base outline-none  text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "
-                  placeholder="Comentame en que te puedo colaborar..."
-                  pattern=".{5,}"
-                ></textarea>
-              </div>
-              <button
-                className="text-white bg-[#4b16b5] border-0 py-2 px-8 focus:outline-none hover:bg-secondary rounded text-lg"
-                onClick={handleSend}
-              >
-                Enviar
-              </button>
-              <p className="text-xs text-gray-500 mt-3">
-                O a Travez de{" "}
-                <span className="text-[#0B67C2]">
-                  <a
-                    href="https://www.linkedin.com/in/pedro-luis-gutierrez-contreras/"
-                    target="_blank"
-                  >
-                    Linkedin
-                  </a>
-                </span>{" "}
-                donde puedes ver mas acerca de mi
-              </p>
-            </form>
-          </div>
-        ) : (
-          <div className="container h-screen  mx-auto">
-            <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
-              <h1 className="mb-10 text-2xl mt-10 dark:text-gray-900 text-blanco">
-                Tu mensaje se esta enviando aguarde unos segundos y sera
-                redirigido a otra pagina
-              </h1>
-              <i className="fa-solid fa-quote-right text-5xl"></i>
-              <p className="leading-relaxed text-lg">
-                La creatividad es la inteligencia divirtiéndose
-              </p>
-              <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-8 mb-6"></span>
-              <h2 className="dark:text-gray-900 text-blanco font-medium title-font tracking-wider text-sm">
-                Albert Einstein{" "}
-                <span className="text-gray-400 dark:text-gray-400">
-                  (1879-1955)
-                </span>
-              </h2>
-              <p className="">Físico</p>
+                pattern=".{2,}"
+              />
             </div>
-          </div>
-        )}
+            <div className="relative mb-4">
+              <label
+                htmlFor="message"
+                className="leading-7 text-sm dark:text-dark text-blanco"
+              >
+                <span className="text-rose-700">* </span>Mensaje:
+              </label>
+              <textarea
+                required
+                id="message"
+                name="message"
+                className="textarea  w-full bg-transparent focus:bg-blanco  rounded border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary text-base outline-none  text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "
+                placeholder="Comentame en que te puedo colaborar..."
+                pattern=".{5,}"
+              ></textarea>
+            </div>
+            <button className="text-white bg-[#4b16b5] border-0 py-2 px-8 focus:outline-none hover:bg-secondary rounded text-lg">
+              Enviar
+            </button>
+            <p className="text-xs text-gray-500 mt-3">
+              O a Travez de{" "}
+              <span className="text-[#0B67C2]">
+                <a
+                  href="https://www.linkedin.com/in/pedro-luis-gutierrez-contreras/"
+                  target="_blank"
+                >
+                  Linkedin
+                </a>
+              </span>{" "}
+              donde puedes ver mas acerca de mi
+            </p>
+          </form>
+        </div>
       </section>
     </>
   );
