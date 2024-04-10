@@ -9,6 +9,7 @@ import Experiencias from "./pages/Experiencias";
 import Conocimientos from "./pages/Conocimientos";
 import Contacto from "./pages/Contacto";
 import Footer from "./components/Footer";
+import { NotFound } from "./pages/NotFound";
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
             <Route path="/experiencias" element={<Experiencias />} />
             <Route path="/conocimientos" element={<Conocimientos />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route element={<NotFound />} path="*" />
           </Routes>
           <Footer />
         </HashRouter>

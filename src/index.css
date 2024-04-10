@@ -136,3 +136,13 @@ body, html{
   overflow-x: hidden;
 }
 
+
+.img404{
+  filter: drop-shadow(0 0 0.20rem #8C52FF);
+}
+
+.img404:hover {
+  filter: drop-shadow(0 0 2rem #8C52FF);
+  transition: filter 0.3s ease-in-out;
+  cursor: pointer;
+}
