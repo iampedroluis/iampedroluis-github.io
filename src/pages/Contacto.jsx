@@ -40,7 +40,7 @@ const Contacto = () => {
             </p>
           </div>
           <form
-            action="https://formsubmit.co/pedroluisgutierrez96@gmail.com"
+            action="https://formsubmit.co/pedroluisgutierrez.dev@gmail.com"
             method="POST"
             className="lg:w-2/6 md:w-1/2 rounded-lg justify-center flex flex-col md:ml-auto mt-10 md:mt-0 w-full"
           >
