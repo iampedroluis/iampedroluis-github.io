@@ -1,299 +1,279 @@
-import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Skeleton from "@mui/material/Skeleton";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations/translations";
 
 const Proyectos = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language];
   const location = useLocation();
+  const [loading, setLoading] = useState(true);
+  const [visibleTitles, setVisibleTitles] = useState([]);
+
   useEffect(() => {
-    const body = document.body;
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 800);
 
-    // Observador de mutaciones para la clase del body
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === "class") {
-          const isDarkMode = body.classList.contains("dark");
-          setDarkMode(isDarkMode);
-        }
-      });
-    });
+    // Intersection Observer for title animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.dataset.titleId;
+            setVisibleTitles((prev) => [...new Set([...prev, id])]);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      }
+    );
 
-    // Configuración del observador
-    const observerConfig = { attributes: true };
+    const titles = document.querySelectorAll("[data-title-id]");
+    titles.forEach((title) => observer.observe(title));
 
-    // Observar cambios en la clase del body
-    observer.observe(body, observerConfig);
-
-    // Establecer el estado `darkMode` según la clase actual del body
-    const isDarkMode = body.classList.contains("dark");
-    setDarkMode(isDarkMode);
-
-    // Limpiar el observador cuando el componente se desmonte
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, []);
 
-  console.log(location);
-  return (
-    <section
-      className={`text-gray-600 body-font mb-10 bg-cover   overflow-hidden ${
-        darkMode ? "light-bg-image greyscale" : "light-bg-image sm:h-full"
-      }  `}
-    >
-      <div className="flex items-center">
-        {location.pathname === "/proyectos" ? (
-          <Link to={"/"}>
-            <i className="fa-solid mt-28 fa-arrow-left-long text-start ms-10 w-1/3 "></i>
-          </Link>
-        ) : (
-          <div></div>
-        )}
-        <h1
-          className="text-4xl font-extrabold text-end mt-28 p-10 container  "
-          id="proyecto"
-        >
-          {" "}
-          PROYECTOS
-        </h1>
-      </div>
+  const projects = [
+    {
+      category: "QA AUTOMATION",
+      title: "OrangeHRM Test Suite",
+      description:
+        "Suite de automatización completa para OrangeHRM con Selenium y Java. Implementa Cucumber para BDD, genera reportes HTML con múltiples escenarios de prueba y sigue el patrón Page Object Model.",
+      github: "https://github.com/iampedroluis/qa-orangehrm",
+      technologies: ["Java", "Selenium", "Cucumber", "Maven", "HTML Reports"],
+      role: "QA AUTOMATION ENGINEER - BDD - SELENIUM",
+    },
+    {
+      category: "FULL-STACK",
+      title: "CodeMind",
+      description:
+        "Plataforma de aprendizaje para desarrolladores fullstack. Sistema completo con gestión de usuarios, rutas de aprendizaje, ejercicios interactivos y autenticación segura desarrollada con React y Flask.",
+      github: "https://github.com/iampedroluis/codemind_p",
+      technologies: ["React", "Python", "Flask", "PostgreSQL", "JavaScript"],
+      role: "FULL-STACK DEVELOPER - ARQUITECTURA - BACKEND/FRONTEND",
+    },
+    {
+      category: "FRONTEND",
+      title: "ToDo-list POKELIST",
+      description:
+        "Aplicación interactiva de lista de tareas con temática Pokémon. Desarrollada con React, incluye gestión de estado, componentes reutilizables y diseño responsive con CSS moderno.",
+      github: "https://github.com/iampedroluis/ToDo-list-POKELIST",
+      technologies: ["React", "JavaScript", "CSS", "HTML", "Webpack"],
+      role: "FRONTEND DEVELOPER - UI/UX - REACT",
+    },
+    {
+      category: "FRONTEND",
+      title: "StarWars Blog",
+      description:
+        "Blog interactivo del universo Star Wars con React. Utiliza Context API para gestión de estado, consume API REST de Star Wars y presenta información de personajes, planetas y naves con diseño moderno.",
+      github: "https://github.com/iampedroluis/StarWars-Blog",
+      technologies: ["React", "JavaScript", "Context API", "CSS", "REST API"],
+      role: "FRONTEND DEVELOPER - REACT - API INTEGRATION",
+    },
+    {
+      category: "FULL-STACK",
+      title: "JWT-Auth System",
+      description:
+        "Sistema completo de autenticación con JWT desarrollado con React y Flask. Incluye registro de usuarios, login seguro, recuperación de contraseña y protección de rutas con tokens JWT.",
+      github: "https://github.com/iampedroluis/JWT-Auth",
+      technologies: ["React", "Python", "Flask", "JWT", "PostgreSQL"],
+      role: "FULL-STACK DEVELOPER - SEGURIDAD - AUTENTICACIÓN",
+    },
+    {
+      category: "MOBILE TESTING",
+      title: "Grow Avalith Appium",
+      description:
+        "Framework de automatización móvil con Appium y Python para testing de aplicaciones Android. Implementa Cucumber para BDD, reportes con Allure y patrón Page Object Model para testing mobile.",
+      github: "https://github.com/iampedroluis/Grow_avalith_Appium",
+      technologies: ["Appium", "Python", "Cucumber", "Allure", "Android"],
+      role: "MOBILE QA ENGINEER - APPIUM - BDD",
+    },
+  ];
 
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-wrap -m-12">
-          <div className="p-12 md:w-1/2 flex flex-col items-start">
-            <span className="inline-block py-1  px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">
-              FRONT-END
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center bg-black dark:bg-black py-20 relative">
+        {location.pathname === "/proyectos" && (
+          <Link
+            to="/"
+            className="fixed top-24 left-6 z-50 text-white/60 hover:text-white transition-colors"
+            aria-label={t.projects.backHome}
+          >
+            <span className="material-icons text-3xl">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e3e3e3"
+              >
+                <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+              </svg>
             </span>
-            <h2
-              className="sm:text-3xl text-2xl text-[#EEF2FF] dark:text-gray-600 title-font font-medium  mt-4 mb-4"
-              id="necc"
-            >
-              NexConnect
-            </h2>
-            <p className="leading-relaxed mb-8 text-gray-500 ">
-              Plataforma web dinámica para la creación y visualización de posts,
-              y descarga de archivos según roles definidos. Diseñada con
-              ReactJS, Tailwind CSS, en el backend, utiliza Node.js y gestiona
-              la autenticación con JWT. La aplicación se encuentra contenerizada
-              con Docker y se integra con una base de datos MySQL para el manejo
-              de la información.
+          </Link>
+        )}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="font-display font-semibold text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 text-white leading-tight">
+              {t.projects.title}
+              <br />
+              <span className="text-white/60 ">{t.projects.subtitle}</span>
+            </h1>
+            <p className="text-xl sm:text-2xl text-white/60 mt-6 font-light max-w-3xl mx-auto">
+              {t.projects.description}
             </p>
-            <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 p-4 my-5 dark:border-gray-300 mt-auto w-full">
-              <a
-                href="https://github.com/iampedroluis/tony_p"
-                className="text-indigo-500 inline-flex items-center"
-                target="_blank"
-              >
-                <i className="fa-brands  fa-github dark:hover:text-dark hover:text-blanco cursor-pointer transition duration-500 ease-in-out"></i>
-              </a>
-              <a
-                href="https://es.react.dev/"
-                target="_blank"
-                className="text-gray-400 text-center   inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out  dark:text-dark hover:bg-blanco hover:text-dark "
-              >
-                React JS
-              </a>
-              <a
-                href="https://tailwindcss.com/"
-                target="_blank"
-                className="text-gray-400 text-center   inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark"
-              >
-                Tailwind CSS
-              </a>
-              <a
-                href="https://nodejs.org/en"
-                target="_blank"
-                className="text-gray-400 text-center   inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark"
-              >
-                Node Js
-              </a>
-              <a
-                href="https://www.mysql.com/"
-                target="_blank"
-                className="text-gray-400 text-center  inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark"
-              >
-                MySQL
-              </a>
-              <a
-                href="https://jwt.io/"
-                target="_blank"
-                className="text-gray-400 text-center  inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark "
-              >
-                JWT.io
-              </a>
-              <a
-                href="https://www.docker.com/"
-                target="_blank"
-                className="text-gray-400 text-center   inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out items-center sdark:text-dark hover:bg-blanco hover:text-dark my-2"
-                id="docker"
-              >
-                Docker
-              </a>
-            </div>
-            <a href="#" className="inline-flex items-center">
-              <span className="flex-grow flex flex-col pl-4">
-                <span className="title-font font-medium  text-[#EEF2FF] dark:text-dark ">
-                  Participación
-                </span>
-                <span className="text-gray-400 text-xs tracking-widest mt-0.5">
-                  DESARROLLO UI/UX - FRONT-END - ARQUITECTURA
-                </span>
-              </span>
-            </a>
-          </div>
-          <div className="p-12 md:w-1/2 flex flex-col items-start">
-            <span className="inline-block py-1  px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">
-              FULL-STACK
-            </span>
-            <h2 className="sm:text-3xl text-2xl text-[#EEF2FF] dark:text-gray-900 title-font font-medium  mt-4 mb-4">
-              CodeMind
-            </h2>
-            <p className="leading-relaxed mb-8 text-gray-500">
-              Plataforma web de ejercicios de lenguajes y herramientas de
-              programación. Creada con arquitectura Flux, componentes en
-              ReactJs, y empleando SqlAlchemy, Flask API y Bootstrap para la
-              estructura y diseño. Utiliza JWT para autenticación, e incluye el
-              servicio SMTP para el restablecimiento de contraseñas, junto con
-              la API de SweetAlert2 para alertas dentro de la aplicación.
-            </p>
-            <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-300 mt-auto w-full">
-              <a
-                href="https://github.com/iampedroluis/codemind_p"
-                className="text-indigo-500 inline-flex items-center"
-                target="_blank"
-              >
-                <i className="fa-brands fa-github dark:hover:text-dark hover:text-blanco cursor-pointer transition duration-500 ease-in-out"></i>
-              </a>
-              <a
-                href="https://es.react.dev/"
-                target="_blank"
-                className="text-gray-400 text-center   inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark my-2"
-                id="react"
-              >
-                React JS
-              </a>
-              <a
-                href="https://getbootstrap.com/"
-                target="_blank"
-                className="text-gray-400 text-center   inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark"
-                id="html"
-              >
-                Boosttrap 5
-              </a>
-              <a
-                href="https://flask.palletsprojects.com/en/3.0.x/"
-                target="_blank"
-                className="text-gray-400 text-center   inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark"
-                id="css"
-              >
-                Flask
-              </a>
-              <a
-                href="https://www.sqlalchemy.org/"
-                target="_blank"
-                className="text-gray-400 text-center  inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark"
-              >
-                SQLAlchemy
-              </a>
-              <a
-                href="https://jwt.io/"
-                target="_blank"
-                className="text-gray-400 text-center  inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark my-2"
-                id="node"
-              >
-                JWT.io
-              </a>
-            </div>
-            <a href="#" className="inline-flex items-center">
-              <span className="flex-grow flex flex-col pl-4">
-                <span className="title-font font-medium  text-[#EEF2FF] dark:text-gray-900">
-                  Participación
-                </span>
-                <span className="text-gray-400 text-xs tracking-widest mt-0.5">
-                  DESARROLLO UI/UX - FRONT-END - ARQUITECTURA - BACK-END
-                </span>
-              </span>
-            </a>
-          </div>
-          <div className="p-12 md:w-1/2 flex flex-col items-start">
-            <span className="inline-block py-1  px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">
-              FULL-STACK
-            </span>
-            <h2 className="sm:text-3xl text-2xl text-[#EEF2FF] dark:text-gray-900 title-font font-medium  mt-4 mb-4">
-              JWT-Auth
-            </h2>
-            <p className="leading-relaxed mb-8 text-gray-500">
-              Aplicación web de demostración que garantiza la autenticación
-              segura mediante el estándar JWT. Emplea SQLAlchemy para
-              administrar bases de datos, Flask como framework para APIs y se
-              estructura con componentes en ReactJS siguiendo el patrón Flux.
-            </p>
-            <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 dark:border-gray-300 mt-auto w-full">
-              <a
-                href="https://github.com/iampedroluis/JWT-Auth"
-                target="_blank"
-                className="text-indigo-500 inline-flex items-center"
-              >
-                <i className="fa-brands fa-github hover:text-blanco dark:hover:text-dark cursor-pointer transition duration-500 ease-in-out"></i>
-              </a>
-              <a
-                href="https://es.react.dev/"
-                target="_blank"
-                className="text-gray-400 text-center   inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark "
-                id="js"
-              >
-                React JS
-              </a>
-              <a
-                href="https://getbootstrap.com/"
-                target="_blank"
-                className="text-gray-400 text-center   inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark"
-                id="bootstrap"
-              >
-                Bootstrap 5
-              </a>
-              <a
-                href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.json.jsonify"
-                target="_blank"
-                className="text-gray-400 text-center   inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark"
-                to="/proyectos#python"
-              >
-                Flask
-              </a>
-              <a
-                href="https://www.sqlalchemy.org/"
-                target="_blank"
-                className="text-gray-400 text-center  inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark"
-              >
-                SQLAlchemy
-              </a>
-              <a
-                href="https://jwt.io/"
-                target="_blank"
-                className="text-gray-400 text-center  inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark my-2 "
-              >
-                JWT.io{" "}
-              </a>
-              <a
-                href="https://www.figma.com/"
-                target="_blank"
-                className="text-gray-400 text-center  inline-flex items-center ml-auto leading-none text-sm p-2 rounded-full border border-secondary text-[#EEF2FF] dark:text-gray-900 hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark hover:bg-blanco hover:text-dark my-2 "
-                id="figma"
-              >
-                Figma{" "}
-              </a>
-            </div>
-            <a href="#" className="inline-flex items-center">
-              <span className="flex-grow flex flex-col pl-4">
-                <span className="title-font font-medium  text-[#EEF2FF] dark:text-gray-900">
-                  Participación
-                </span>
-                <span className="text-gray-400 text-xs tracking-widest mt-0.5">
-                  DESARROLLO UI/UX - FRONT-END - ARQUITECTURA - BACK-END
-                </span>
-              </span>
-            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-24 bg-white dark:bg-white ">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
+          <div className="max-w-6xl mx-auto space-y-16  ">
+            {loading
+              ? // Skeleton Loading
+                Array.from({ length: 6 }).map((_, index) => (
+                  <article
+                    key={index}
+                    className="bg-lightGray dark:bg-lightGray rounded-3xl overflow-hidden shadow-md "
+                  >
+                    <div className="p-8 sm:p-12 lg:p-16 shadow-xl">
+                      <Skeleton
+                        variant="rectangular"
+                        width={120}
+                        height={32}
+                        sx={{
+                          bgcolor: "rgba(0, 0, 0, 0.1)",
+                          borderRadius: "20px",
+                          mb: 3,
+                        }}
+                      />
+
+                      <Skeleton
+                        variant="text"
+                        width="60%"
+                        height={56}
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.1)", mb: 3 }}
+                      />
+
+                      <Skeleton
+                        variant="rectangular"
+                        width="100%"
+                        height={80}
+                        sx={{
+                          bgcolor: "rgba(0, 0, 0, 0.1)",
+                          borderRadius: "8px",
+                          mb: 4,
+                        }}
+                      />
+
+                      {/* Technologies Skeleton */}
+                      <div className="flex flex-wrap gap-3 mb-8">
+                        {Array.from({ length: 5 }).map((_, techIndex) => (
+                          <Skeleton
+                            key={techIndex}
+                            variant="rectangular"
+                            width={80}
+                            height={36}
+                            sx={{
+                              bgcolor: "rgba(0, 0, 0, 0.1)",
+                              borderRadius: "20px",
+                            }}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Role and GitHub Skeleton */}
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-6 border-t border-black/10">
+                        <div className="flex-1">
+                          <Skeleton
+                            variant="text"
+                            width={100}
+                            height={24}
+                            sx={{ bgcolor: "rgba(0, 0, 0, 0.1)", mb: 1 }}
+                          />
+                          <Skeleton
+                            variant="text"
+                            width="80%"
+                            height={20}
+                            sx={{ bgcolor: "rgba(0, 0, 0, 0.1)" }}
+                          />
+                        </div>
+                        <Skeleton
+                          variant="text"
+                          width={140}
+                          height={28}
+                          sx={{ bgcolor: "rgba(0, 0, 0, 0.1)" }}
+                        />
+                      </div>
+                    </div>
+                  </article>
+                ))
+              : projects.map((project, index) => (
+                  <article
+                    key={index}
+                    className="bg-lightGray dark:bg-lightGray rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500"
+                  >
+                    <div className="p-8 sm:p-12 lg:p-16">
+                      <span className="inline-block py-2 px-4 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase mb-6">
+                        {project.category}
+                      </span>
+
+                      <h2 className="font-display font-semibold text-3xl sm:text-4xl lg:text-5xl text-black mb-6 leading-tight">
+                        {project.title}
+                      </h2>
+
+                      <p className="text-lg sm:text-xl text-black/70 leading-relaxed mb-8 max-w-3xl">
+                        {project.description}
+                      </p>
+
+                      {/* Technologies */}
+                      <div className="flex flex-wrap gap-3 mb-8">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-4 py-2 text-sm font-medium rounded-full bg-white text-black"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Role and GitHub */}
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-6 border-t border-black/10">
+                        <div>
+                          <p className="text-black font-semibold mb-1">
+                            Participación
+                          </p>
+                          <p className="text-black/60 text-sm">
+                            {project.role}
+                          </p>
+                        </div>
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:text-primary/80 text-lg font-medium transition-colors flex items-center gap-2"
+                        >
+                          {t.projects.viewGithub}
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

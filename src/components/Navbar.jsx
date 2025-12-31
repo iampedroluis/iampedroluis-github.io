@@ -1,10 +1,26 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations/translations";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
   const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("darkMode") === "true" ? true : false;
+    // Detectar preferencia del sistema
+    if (typeof window !== "undefined") {
+      const savedMode = localStorage.getItem("darkMode");
+      if (savedMode !== null) {
+        return savedMode === "true";
+      }
+      // Si no hay preferencia guardada, usar la del sistema (por defecto light)
+      return (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      );
+    }
+    return false; // Por defecto modo claro
   });
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
@@ -39,93 +55,148 @@ const Navbar = () => {
 
   return (
     <header
-      className={`z-[100] text-gray-600 w-full dark:bg-[#FEFFFE] bg-black body-font  fixed top-0 max-w-100 transition-all ${
-        visible ? "" : "-translate-y-full"
+      className={`z-[100] w-full fixed top-0 transition-all duration-500 ease-in-out backdrop-blur-xl ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      } ${darkMode ? "bg-black/80" : "bg-white/80"} border-b ${
+        darkMode ? "border-white/10" : "border-black/10"
       }`}
     >
-      <div className="container mx-auto flex p-5 justify-between items-center w-full">
-        <a
-          href="/"
-          className="title-font font-medium text-gray-900 mb-4 md:mb-0 miLogo"
+      <div className="container mx-auto flex py-1 px-6 lg:px-8 justify-between items-center">
+        <Link
+          to="/"
+          className="title-font font-semibold text-xl hover:opacity-70 transition-opacity"
         >
-          <p className="block text-white cursor-pointer dark:text-dark">
-            PEDRO
-          </p>
-          <p className="block text-white cursor-pointer dark:text-dark">LUIS</p>
-        </a>
+          <span
+            className={`block tracking-tight ${
+              darkMode ? "text-white" : "text-black"
+            }`}
+          >
+            Pedro Luis
+          </span>
+        </Link>
+
         <nav
-          className={`md:ml-auto md:mr-auto flex flex-col md:flex-row items-center text-base justify-center md:flex ${
-            isOpen ? "block" : "hidden"
+          className={`md:ml-auto md:mr-auto flex flex-col md:flex-row items-center text-sm justify-center md:flex ${
+            isOpen
+              ? `block absolute top-full left-0 w-full ${
+                  darkMode ? "bg-black/95" : "bg-white/95"
+                } backdrop-blur-xl py-6 md:py-0 md:relative`
+              : "hidden"
           }`}
         >
           <Link
-            className=" mx-5 font-extralight sm:font-normal hover:text-secondary cursor-pointer text-white  transition duration-500 ease-in-out dark:text-dark"
+            className={`mx-4 my-2 md:my-0 font-normal hover:text-primary cursor-pointer transition-all duration-300 hover:opacity-70 ${
+              darkMode ? "text-white" : "text-black"
+            }`}
             to="/proyectos"
+            onClick={() => setIsOpen(false)}
           >
-            Proyectos
+            {t.nav.projects}
           </Link>
           <Link
-            className=" mx-5 font-extralight sm:font-normal hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark"
+            className={`mx-4 my-2 md:my-0 font-normal hover:text-primary cursor-pointer transition-all duration-300 hover:opacity-70 ${
+              darkMode ? "text-white" : "text-black"
+            }`}
             to="/experiencias"
+            onClick={() => setIsOpen(false)}
           >
-            Experiencias
+            {t.nav.experiences}
           </Link>
           <Link
-            className=" mx-5 font-extralight sm:font-normal hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark"
-            to={"/conocimientos"}
+            className={`mx-4 my-2 md:my-0 font-normal hover:text-primary cursor-pointer transition-all duration-300 hover:opacity-70 ${
+              darkMode ? "text-white" : "text-black"
+            }`}
+            to="/conocimientos"
+            onClick={() => setIsOpen(false)}
           >
-            Conocimientos
+            {t.nav.knowledge}
           </Link>
           {isOpen && (
-            <div className="md:flex flex-col md:flex-row">
+            <>
               <Link
-                to={"/contacto"}
-                className="mx-5 font-extralight hover:text-secondary cursor-pointer text-white transition duration-500 ease-in-out dark:text-dark"
+                to="/contacto"
+                className={`mx-4 my-2 md:my-0 font-normal hover:text-primary cursor-pointer transition-all duration-300 md:hidden ${
+                  darkMode ? "text-white" : "text-black"
+                }`}
+                onClick={() => setIsOpen(false)}
               >
-                Contacto
+                {t.nav.contact}
               </Link>
-            </div>
-          )}
-          {isOpen && (
-            <button className="border-0 md:hidden" onClick={toggleDarkMode}>
-              {darkMode ? (
-                <i className="fas fa-moon text-dark focus:outline-none hover:text-secondary transition duration-900 ease-in-out"></i>
-              ) : (
-                <i className="fas fa-sun text-white focus:outline-none hover:text-secondary transition duration-900 ease-in-out"></i>
-              )}
-            </button>
+              <div className="flex items-center gap-4 mt-4 md:hidden">
+                <button
+                  className={`border-0 px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
+                    darkMode
+                      ? "bg-white/10 text-white hover:bg-white/20"
+                      : "bg-black/10 text-black hover:bg-black/20"
+                  }`}
+                  onClick={toggleLanguage}
+                >
+                  {language === "es" ? "EN" : "ES"}
+                </button>
+                <button
+                  className={`border-0 ${
+                    darkMode ? "text-white" : "text-black"
+                  }`}
+                  onClick={toggleDarkMode}
+                >
+                  {darkMode ? (
+                    <i className="fas fa-sun focus:outline-none hover:text-primary transition-all duration-300"></i>
+                  ) : (
+                    <i className="fas fa-moon focus:outline-none hover:text-primary transition-all duration-300"></i>
+                  )}
+                </button>
+              </div>
+            </>
           )}
         </nav>
-        <button onClick={toggleMenu} className="md:hidden focus:outline-none ">
+
+        <button
+          onClick={toggleMenu}
+          className={`md:hidden focus:outline-none hover:opacity-70 transition-opacity ${
+            darkMode ? "text-white" : "text-black"
+          }`}
+        >
           <svg
-            className="w-10 text-blanco dark:text-dark"
+            className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+            />
           </svg>
         </button>
 
-        <div className="md:block hidden">
-          <button className="mx-5 " onClick={toggleDarkMode}>
+        <div className="md:flex hidden items-center gap-4">
+          <button
+            className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
+              darkMode
+                ? "bg-white/10 text-white hover:bg-white/20"
+                : "bg-black/10 text-black hover:bg-black/20"
+            }`}
+            onClick={toggleLanguage}
+          >
+            {language === "es" ? "EN" : "ES"}
+          </button>
+          <button
+            className="hover:opacity-70 transition-opacity"
+            onClick={toggleDarkMode}
+          >
             {darkMode ? (
-              <i className="fas fa-moon text-dark hover:text-secondary focus:outline-none transition duration-900 ease-in-out"></i>
+              <i className="fas fa-sun text-white focus:outline-none text-lg"></i>
             ) : (
-              <i className="fas fa-sun text-white hover:text-secondary focus:outline-none transition duration-900 ease-in-out"></i>
+              <i className="fas fa-moon text-black focus:outline-none text-lg"></i>
             )}
           </button>
           <Link
-            to={"/contacto"}
-            className="inline-flex items-center bg-transparent border-2 py-1 px-3 focus:outline-none hover:bg-secondary hover:text-black text-white rounded-full text-base mt-4 md:mt-0 border-secondary transition duration-500 dark:text-dark ease-in-out"
+            to="/contacto"
+            className="inline-flex items-center bg-primary hover:bg-primary/90 py-2 px-5 focus:outline-none text-white rounded-full text-sm font-medium transition-all duration-300"
           >
-            Contacto
+            {t.nav.contact}
           </Link>
         </div>
       </div>

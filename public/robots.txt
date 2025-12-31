@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://iampedroluis.github.io/sitemap.xml
+
+# Disallow specific files
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /*.jsx$
