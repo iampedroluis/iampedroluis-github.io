@@ -182,15 +182,17 @@ const Home = () => {
                       sx={{ bgcolor: "rgba(0, 0, 0, 0.1)" }}
                     />
                   )}
-                  <img
-                    src={img}
-                    alt={alt}
-                    className={
-                      "h-12 w-12 object-contain hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0 " +
-                      (!imagesLoaded[key] ? "hidden" : "")
-                    }
-                    onLoad={() => handleImageLoad(key)}
-                  />
+                  <div className="p-3 rounded-2xl backdrop-blur-sm bg-white/10 border border-white/20 shadow-lg hover:bg-white/20 transition-all duration-300 hover:scale-110">
+                    <img
+                      src={img}
+                      alt={alt}
+                      className={
+                        "h-12 w-12 object-contain transition-transform duration-300 filter grayscale hover:grayscale-0 " +
+                        (!imagesLoaded[key] ? "hidden" : "")
+                      }
+                      onLoad={() => handleImageLoad(key)}
+                    />
+                  </div>
                 </div>
               ))}
             </div>
@@ -303,7 +305,7 @@ const Home = () => {
               {companies.map((company, index) => (
                 <div
                   key={index}
-                  className="w-full h-24 flex items-center justify-center p-6 bg-lightGray rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  className="w-full h-24 flex items-center justify-center p-6 backdrop-blur-sm bg-white/20 border border-white/30 rounded-2xl shadow-lg hover:shadow-xl hover:bg-white/30 transition-all duration-300 hover:scale-105"
                 >
                   {!companiesLoaded[index] && (
                     <Skeleton
@@ -368,7 +370,7 @@ const Home = () => {
                 Array.from({ length: 3 }).map((_, index) => (
                   <article
                     key={index}
-                    className="bg-white rounded-3xl p-8 flex flex-col shadow-md"
+                    className="backdrop-blur-md bg-white/70 border border-white/20 rounded-3xl p-8 flex flex-col shadow-lg"
                   >
                     <div className="mb-4">
                       <Skeleton
@@ -424,7 +426,7 @@ const Home = () => {
               ) : (
                 <>
                   {/* Project 1 - Pinapp QA Automation */}
-                  <article className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-500 flex flex-col">
+                  <article className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-500 flex flex-col">
                     <div className="mb-4">
                       <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase mb-4">
                         QA Automation
@@ -466,7 +468,7 @@ const Home = () => {
                   </article>
 
                   {/* Project 2 - OrangeHRM QA */}
-                  <article className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-500 flex flex-col">
+                  <article className="backdrop-blur-md bg-white/70 border border-white/20 rounded-2xl p-8 shadow-lg hover:shadow-xl hover:bg-white/80 transition-all duration-500 flex flex-col">
                     <div className="mb-4">
                       <span className="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-semibold tracking-wide uppercase mb-4">
                         Test Automation
@@ -508,7 +510,7 @@ const Home = () => {
                   </article>
 
                   {/* Project 3 - NexConnect */}
-                  <article className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-500 flex flex-col">
+                  <article className="backdrop-blur-md bg-white/70 border border-white/20 rounded-2xl p-8 shadow-lg hover:shadow-xl hover:bg-white/80 transition-all duration-500 flex flex-col">
                     <div className="mb-4">
                       <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wide uppercase mb-4">
                         Full Stack
@@ -567,7 +569,6 @@ const Home = () => {
       </section>
 
       {/* Spacer with gradient */}
-      
     </>
   );
 };

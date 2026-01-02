@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <LanguageProvider>
-        <div className="dark:bg-blanco bg-black app-container min-h-screen">
+        <div className="bg-white app-container min-h-screen">
           <HashRouter>
             <ScrollToTop />
             <Navbar />

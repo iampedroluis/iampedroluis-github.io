@@ -356,7 +356,7 @@ const Conocimientos = () => {
                     <article
                       key={index}
                       data-index={index}
-                      className={`bg-lightGray dark:bg-lightGray rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-700 ${
+                      className={`backdrop-blur-md bg-white/30 border border-white/20 rounded-3xl p-8 shadow-lg hover:shadow-xl hover:bg-white/40 transition-all duration-700 ${
                         visibleCards.includes(index)
                           ? "opacity-100 translate-y-0"
                           : "opacity-0 translate-y-8"
@@ -377,7 +377,7 @@ const Conocimientos = () => {
                               <h3 className="font-display font-semibold text-2xl text-black mb-1">
                                 {tech.name}
                               </h3>
-                              <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase">
+                              <span className="inline-block px-3 py-1 rounded-full backdrop-blur-sm bg-primary/20 border border-primary/30 text-primary text-xs font-semibold tracking-wide uppercase">
                                 {tech.category}
                               </span>
                             </div>
@@ -421,7 +421,7 @@ const Conocimientos = () => {
           </p>
           <Link
             to="/contacto"
-            className="inline-flex items-center bg-primary hover:bg-primary/90 py-3 px-8 text-white rounded-full text-base font-medium transition-all duration-300"
+            className="inline-flex items-center backdrop-blur-sm bg-primary/80 border border-primary/30 hover:bg-primary/90 py-3 px-8 text-white rounded-full text-base font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             {t.knowledge.cta.button}
           </Link>

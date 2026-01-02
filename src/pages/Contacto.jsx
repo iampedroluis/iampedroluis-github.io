@@ -136,7 +136,7 @@ const Contacto = () => {
               </div>
 
               {/* Contact Methods */}
-              <div className="bg-lightGray rounded-3xl p-8 shadow-md space-y-6">
+              <div className="backdrop-blur-md bg-white/30 border border-white/20 rounded-2xl p-8 shadow-lg space-y-6">
                 <h3 className="font-display font-semibold text-2xl text-black mb-6">
                   {t.contact.contactWays}
                 </h3>
@@ -144,7 +144,7 @@ const Contacto = () => {
                 {/* Email Button */}
                 <a
                   href="mailto:pedroluisgutierrez.dev@gmail.com?subject=Contacto%20desde%20Portfolio&body=Hola%20Pedro%2C%0A%0AMe%20gustar%C3%ADa%20contactarte%20para%3A%0A%0A"
-                  className="block w-full bg-primary hover:bg-primary/90 text-white font-medium py-4 px-6 rounded-2xl text-base transition-all duration-300 shadow-md hover:shadow-lg text-center"
+                  className="block w-full backdrop-blur-sm bg-primary/80 border border-primary/30 hover:bg-primary/90 text-white font-medium py-4 px-6 rounded-2xl text-base transition-all duration-300 shadow-lg hover:shadow-xl text-center"
                 >
                   <i className="fa-solid fa-envelope mr-2"></i>
                   {t.contact.sendEmail}
@@ -155,7 +155,7 @@ const Contacto = () => {
                   href="https://www.linkedin.com/in/pedro-luis-gutierrez-contreras/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full bg-[#0A66C2] hover:bg-[#004182] text-white font-medium py-4 px-6 rounded-2xl text-base transition-all duration-300 shadow-md hover:shadow-lg text-center"
+                  className="block w-full backdrop-blur-sm bg-[#0A66C2]/80 border border-[#0A66C2]/30 hover:bg-[#004182]/90 text-white font-medium py-4 px-6 rounded-2xl text-base transition-all duration-300 shadow-lg hover:shadow-xl text-center"
                 >
                   <i className="fa-brands fa-linkedin mr-2"></i>
                   {t.contact.connectLinkedIn}

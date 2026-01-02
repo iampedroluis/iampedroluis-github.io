@@ -55,7 +55,7 @@ const AboutMe = () => {
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col items-center mb-16">
               <div className="relative mb-12">
-                <div className="w-48 h-48 rounded-full overflow-hidden shadow-2xl">
+                <div className="w-48 h-48 rounded-full overflow-hidden backdrop-blur-md bg-white/30 border border-white/20 shadow-2xl">
                   {!imageLoaded && (
                     <Skeleton
                       variant="circular"
@@ -166,7 +166,7 @@ const AboutMe = () => {
               ].map((tech, index) => (
                 <div
                   key={index}
-                  className="bg-white dark:bg-white p-6 rounded-2xl text-center text-black text-lg font-medium shadow-sm hover:shadow-md transition-shadow"
+                  className="backdrop-blur-md bg-white/30 border border-white/20 p-6 rounded-2xl text-center text-black text-lg font-medium shadow-lg hover:shadow-xl hover:bg-white/40 transition-all duration-300"
                 >
                   {tech}
                 </div>

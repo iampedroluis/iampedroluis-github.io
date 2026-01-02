@@ -256,7 +256,7 @@ const Experiencias = () => {
                         <div className="absolute left-[19px] top-6 w-4 h-4 bg-primary rounded-full ring-4 ring-white"></div>
 
                         {/* Content */}
-                        <div className="bg-lightGray rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div className="backdrop-blur-md bg-white/30 border border-white/20 rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl hover:bg-white/40 transition-all duration-300">
                           {/* Header with Logo */}
                           <div className="flex items-start gap-6 mb-6">
                             {/* Company Logo */}
@@ -338,7 +338,7 @@ const Experiencias = () => {
           </p>
           <Link
             to="/contacto"
-            className="inline-flex items-center bg-primary hover:bg-primary/90 py-3 px-8 text-white rounded-full text-base font-medium transition-all duration-300"
+            className="inline-flex items-center backdrop-blur-sm bg-primary/80 border border-primary/30 hover:bg-primary/90 py-3 px-8 text-white rounded-full text-base font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             {t.experiences.cta.button}
           </Link>

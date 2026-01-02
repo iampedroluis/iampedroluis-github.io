@@ -221,10 +221,10 @@ const Proyectos = () => {
               : projects.map((project, index) => (
                   <article
                     key={index}
-                    className="bg-lightGray dark:bg-lightGray rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500"
+                    className="backdrop-blur-md bg-white/30 border border-white/20 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl hover:bg-white/40 transition-all duration-500"
                   >
                     <div className="p-8 sm:p-12 lg:p-16">
-                      <span className="inline-block py-2 px-4 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase mb-6">
+                      <span className="inline-block py-2 px-4 rounded-full backdrop-blur-sm bg-primary/20 border border-primary/30 text-primary text-xs font-semibold tracking-wide uppercase mb-6">
                         {project.category}
                       </span>
 
@@ -241,7 +241,7 @@ const Proyectos = () => {
                         {project.technologies.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-4 py-2 text-sm font-medium rounded-full bg-white text-black"
+                            className="px-4 py-2 text-sm font-medium rounded-full backdrop-blur-sm bg-white/70 border border-white/30 text-black"
                           >
                             {tech}
                           </span>
